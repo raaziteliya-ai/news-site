@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सूरज न्यूज़ - देश की ताज़ा खबरें</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="top-bar">
+    🔴 LIVE: देश की ताज़ा खबरें | Breaking News 24x7 | सूरज न्यूज़
+</div>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">सूरज न्यूज़</div>
+        <div class="header-date" id="date-time"></div>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="active" onclick="filterNews('होम',this)">होम</a>
+        <a href="#" onclick="filterNews('देश',this)">देश</a>
+        <a href="#" onclick="filterNews('विदेश',this)">विदेश</a>
+        <a href="#" onclick="filterNews('राजनीति',this)">राजनीति</a>
+        <a href="#" onclick="filterNews('खेल',this)">खेल</a>
+        <a href="#" onclick="filterNews('मनोरंजन',this)">मनोरंजन</a>
+        <a href="#" onclick="filterNews('व्यापार',this)">व्यापार</a>
+        <a href="#" onclick="filterNews('टेक्नोलॉजी',this)">टेक्नोलॉजी</a>
+        <a href="#" onclick="filterNews('स्वास्थ्य',this)">स्वास्थ्य</a>
+    </div>
+</nav>
+
+<div class="breaking">
+    <strong>⚡ ब्रेकिंग:</strong>
+    <span id="breaking-ticker"></span>
+</div>
+
+<div class="container">
+
+    <div class="main-grid">
+        <div class="hero-card" onclick="openModal(0)" style="cursor:pointer">
+            <img id="hero-img" src="" alt="news" class="hero-img">
+            <div class="hero-content">
+                <span class="category-badge" id="hero-cat">मुख्य खबर</span>
+                <h1 class="hero-title" id="hero-title"></h1>
+                <p class="hero-desc" id="hero-desc"></p>
+                <span class="news-time" id="hero-time"></span>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar-news"></div>
+    </div>
+
+    <div class="section-head">
+        <h2 id="section-title">ताज़ा खबरें</h2>
+    </div>
+
+    <div class="news-grid" id="news-grid"></div>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">सूरज न्यूज़</div>
+            <p>देश की सबसे विश्वसनीय हिंदी न्यूज़ वेबसाइट।</p>
+        </div>
+        <div>
+            <h4>लिंक</h4>
+            <a href="#">देश</a>
+            <a href="#">विदेश</a>
+            <a href="#">खेल</a>
+            <a href="#">मनोरंजन</a>
+        </div>
+        <div>
+            <h4>संपर्क</h4>
+            <a href="#">हमसे संपर्क करें</a>
+            <a href="#">विज्ञापन दें</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 सूरज न्यूज़. सर्वाधिकार सुरक्षित।</div>
+</footer>
+
+<!-- NEWS MODAL -->
+<div id="news-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:9999; overflow-y:auto;">
+    <div style="background:white; max-width:750px; margin:40px auto; border-radius:8px; overflow:hidden;">
+        <div style="background:#b22222; color:white; padding:14px 20px; display:flex; justify-content:space-between; align-items:center;">
+            <span id="modal-category" style="font-weight:bold; font-size:13px; letter-spacing:1px;"></span>
+            <span onclick="closeModal()" style="cursor:pointer; font-size:24px; font-weight:bold;">✕</span>
+        </div>
+        <div style="padding:24px;">
+            <img id="modal-img" src="" style="width:100%; height:280px; object-fit:cover; border-radius:6px; margin-bottom:16px; display:block;">
+            <h2 id="modal-title" style="font-size:22px; font-weight:800; color:#1a1a1a; line-height:1.4; margin-bottom:10px;"></h2>
+            <p style="font-size:12px; color:#999; margin-bottom:16px;" id="modal-time"></p>
+            <p id="modal-desc" style="font-size:15px; color:#444; line-height:1.9;"></p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
